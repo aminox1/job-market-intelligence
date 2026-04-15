@@ -2,6 +2,8 @@
 
 > **En clair :** C'est une application qui surveille automatiquement les offres d'emploi tech sur internet, extrait les compétences demandées, et t'affiche dans un beau tableau de bord : *quelles technologies sont les plus recherchées, lesquelles sont en hausse, et ce que tu devrais apprendre pour trouver un job plus facilement.*
 
+🌐 **[➡️ Voir l'app en live](https://job-market-intelligence.streamlit.app)**
+
 ---
 
 ## 🤔 C'est quoi concrètement ?
@@ -21,7 +23,7 @@ Imagine que tu veux savoir :
 
 ```
 1. 🤖 COLLECTE          2. 🧠 ANALYSE            3. 📊 AFFICHAGE
-                                                   
+
 L'app télécharge    →   Elle lit chaque offre  →  Tu vois tout ça dans
 des centaines           et extrait les skills      un beau dashboard
 d'offres d'emploi       mentionnés                 interactif
@@ -108,7 +110,6 @@ Tu sélectionnes tes compétences actuelles (ex: Python, Docker, Git...) et l'ap
 
 ### Installation (une seule fois)
 ```powershell
-# Installer les dépendances
 pip install -r requirements.txt
 ```
 
@@ -116,7 +117,6 @@ pip install -r requirements.txt
 
 **Étape 1 — Collecter les offres d'emploi :**
 ```powershell
-Set-Location D:\Job-Market-Intelligence
 python -m src.scraper.scheduler
 ```
 *Cette commande va chercher les offres sur internet. Elle prend ~30 secondes.*
@@ -131,7 +131,6 @@ streamlit run src/dashboard/app.py
 
 ## 🐳 Lancer avec Docker (encore plus simple)
 
-Si tu as Docker installé :
 ```bash
 docker-compose up --build
 ```
@@ -139,7 +138,7 @@ Puis ouvre http://localhost:8501. C'est tout.
 
 ---
 
-## 🧪 Lancer les tests
+## 🧪 Tester le code
 
 ```powershell
 pytest tests/ -v
@@ -150,7 +149,7 @@ pytest tests/ -v
 ## 📁 Organisation du code
 
 ```
-D:\Job-Market-Intelligence\
+job-market-intelligence/
 │
 ├── src/
 │   ├── database/         ← Stockage des données (SQLite)
@@ -159,7 +158,6 @@ D:\Job-Market-Intelligence\
 │   ├── ml/               ← Prédiction des tendances (Machine Learning)
 │   └── dashboard/        ← Interface graphique (Streamlit)
 │
-├── data/                 ← Base de données SQLite (créée automatiquement)
 ├── tests/                ← Tests automatisés
 ├── requirements.txt      ← Liste des librairies Python
 ├── Dockerfile            ← Pour déployer avec Docker
