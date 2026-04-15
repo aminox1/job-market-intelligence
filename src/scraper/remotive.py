@@ -38,7 +38,7 @@ def strip_html(html: str) -> str:
     """Supprime les balises HTML et retourne le texte brut."""
     if not html:
         return ""
-    soup = BeautifulSoup(html, "lxml")
+    soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text(separator=" ")
     # Nettoyer espaces multiples
     text = re.sub(r"\s+", " ", text).strip()
