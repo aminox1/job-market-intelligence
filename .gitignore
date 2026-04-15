@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.pyc
+
+# Environnement virtuel
+venv/
+env/
+.venv/
+ENV/
+
+# Variables d'environnement (SENSIBLE !)
+.env
+
+# Base de données locale (trop lourde pour GitHub)
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Modèles ML sauvegardés
+models/
+*.pkl
+*.joblib
+
+# Streamlit cache
+.streamlit/secrets.toml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Coverage / Tests
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build
+dist/
+build/
+*.egg-info/
